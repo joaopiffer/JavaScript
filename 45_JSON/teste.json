@@ -1,0 +1,10 @@
+{
+    "nome": "João",
+    "idade": 19,
+    "esta_trabalhando": true,
+    "detalhes_profissao": {
+        "profissão": "programador",
+        "empresa": "Piffer consorcios"
+    },
+    "hobbies": ["jgar", 54, "Programar", true]
+}
