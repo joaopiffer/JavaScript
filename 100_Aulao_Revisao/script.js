@@ -216,3 +216,106 @@ const lastName = "da Silva"
 
 console.log(nomeCompleto(firstName, lastName))
 console.log(nomeCompleto("João", "Piffer"))
+
+const meuNomeCompleto = nomeCompleto(firstName, lastName)
+
+console.log(meuNomeCompleto)
+
+// arrow functions
+
+const myArrowFunction = (a, b) => {
+    return a + b
+}
+
+console.log(myArrowFunction(2, 30))
+
+const mySimpleArrowFunction = (a, b) => a + b
+
+console.log(mySimpleArrowFunction(2, 3))
+
+// Classes
+
+class Produto {
+
+    constructor(name, price) {
+        this.name = name
+        this.price = price
+    }
+
+    promocao() {
+    console.log(`Imperdível!!! ${this.name} por somente R$ ${this.price}!`)
+}
+}
+
+
+
+const socks = new Produto("Par de meia", 9.99)
+const tShirt = new Produto("Camiseta Simples", 25.99)
+
+socks.promocao()
+
+// Herança 
+
+class ProdutoPlus extends Produto {
+    constructor (name, price, size) {
+        super(name, price)
+        this.size = size
+    }
+
+    showAdjectiv(adjectiv) {
+        return `O produto ${this.name} é ${adjectiv}!`
+    }
+
+    //static
+    static sayHello() {
+        console.log("Hello")
+    }
+}
+
+const shoes = new ProdutoPlus("Tênis Nike", 299.00, "39")
+
+console.log(shoes.name)
+console.log(shoes.price)
+console.log(shoes.size)
+
+console.log(shoes.showAdjectiv("Confortável"))
+
+ProdutoPlus.sayHello()
+
+// DOM - Document Object Model
+
+const title = document.querySelector("#title")
+
+console.log(title)
+
+const texts = document.querySelectorAll(".classe")
+
+console.log(texts)
+console.log(texts[1])
+
+texts.forEach((text) => {
+    console.log(text.textContent)
+})
+
+// Manipulação de Elementos 
+title.textContent = "MUdei o título pelo Js"
+
+console.log(title.textContent)
+
+texts[0].innerHTML = '<span> Alterameno o HTML deste elemento</span>'
+
+texts[1].style.backgroundColor = 'red'
+
+texts[2].classList.add('outraclasse')
+texts[2].classList.remove('classe')
+
+texts[3].remove()
+
+// Eventos 
+
+const botao = document.querySelector("#btn")
+
+botao.addEventListener("click", function() {
+
+    texts[4].style.backgroundColor = 'black'
+})
